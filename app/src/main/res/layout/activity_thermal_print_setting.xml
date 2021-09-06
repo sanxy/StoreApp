@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_250sdp"
+        android:layout_alignParentBottom="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/em_backgroung" />
+
+
+    <LinearLayout
+        android:id="@+id/toolbarArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/toolbar_include"
+            layout="@layout/design_toolbar_general" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/toolbarArea"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/scrollArea"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_above="@+id/btnArea"
+            android:layout_below="@+id/toolbarArea"
+            android:layout_weight="1"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_50sdp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/_105sdp"
+                        android:layout_height="@dimen/_105sdp"
+                        android:layout_gravity="center_horizontal"
+                        app:srcCompat="@drawable/ic_printer_icon" />
+
+                    <com.view.MTextView
+                        android:id="@+id/descTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Do Printer Settings As Per Choice"
+                        android:textAlignment="center"
+                        android:textColor="#505050"
+                        android:textSize="@dimen/_13ssp"
+                        app:customTypeFace="@string/systemRegular" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:gravity="bottom"
+                    android:animateLayoutChanges="true"
+                    android:layout_marginTop="@dimen/txt_size_10"
+                    android:layout_marginBottom="@dimen/txt_size_15"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/printArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start|center"
+                            android:layout_weight="1">
+
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <com.view.MTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/txtAllowPrint"
+                                    android:gravity="start|center"
+                                    android:text="svddv"
+                                    android:layout_marginEnd="@dimen/_20sdp"
+                                    android:textAlignment="viewStart"
+                                    android:textSize="@dimen/txt_size_14"
+                                    app:customTypeFace="@string/systemRegular" />
+
+                                <ImageView
+                                    android:gravity="end"
+                                    android:layout_gravity="end"
+                                    android:id="@+id/autoPrintInfo"
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:visibility="visible"
+                                    app:srcCompat="@drawable/ic_information" />
+                            </FrameLayout>
+
+
+                        </LinearLayout>
+
+
+                        <CheckBox
+                            android:id="@+id/cbAllowPrint"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="5dp"
+                            android:gravity="center"
+                            android:buttonTint="@color/appThemeColor_2"
+                            android:textColor="#272727"
+                            android:textSize="@dimen/txt_size_16"
+                            android:theme="@style/MyCheckBox" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:layout_marginTop="@dimen/txt_size_15"
+                        android:id="@+id/autoPrintArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start|center"
+                            android:layout_weight="1">
+
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <com.view.MTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/txtAutoPrint"
+                                android:gravity="start|center"
+                                android:text="svddv"
+                                android:layout_marginEnd="@dimen/_20sdp"
+                                android:textAlignment="viewStart"
+                                android:textSize="@dimen/txt_size_14"
+                                app:customTypeFace="@string/systemRegular" />
+
+                            <ImageView
+                                android:gravity="end"
+                                android:layout_gravity="end"
+                                android:id="@+id/allowAutoPrintInfo"
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:visibility="visible"
+                                app:srcCompat="@drawable/ic_information" />
+                        </FrameLayout>
+                        </LinearLayout>
+                        <CheckBox
+                            android:id="@+id/cbAllowAutoPrint"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="5dp"
+                            android:gravity="center"
+                            android:buttonTint="@color/appThemeColor_2"
+                            android:textColor="#272727"
+                            android:textSize="@dimen/txt_size_16"
+                            android:theme="@style/MyCheckBox" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/footerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/bottomLayout"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/top_curve_card"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/statusArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_13sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <com.view.MTextView
+                            android:id="@+id/txtStatus"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:text=""
+                            android:textAlignment="viewStart"
+                            android:textColor="#272727"
+                            android:textSize="@dimen/_14ssp"
+                            app:customTypeFace="@string/systemSemiBold" />
+
+                        <com.view.MTextView
+                            android:id="@+id/txtStatusVal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:text=""
+                            android:textAlignment="viewStart"
+                            android:textColor="#272727"
+                            android:textSize="@dimen/_10ssp"
+                            app:customTypeFace="@string/systemRegular" />
+
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:layout_gravity="center"
+                        android:layout_marginStart="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <com.view.MTextView
+                            android:visibility="invisible"
+                            android:id="@+id/connectTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text=""
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/txt_size_14"
+                            app:customTypeFace="@string/systemRegular" />
+
+                        <com.view.MTextView
+                            android:visibility="invisible"
+                            android:id="@+id/disConnectTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text=""
+                            android:textColor="@color/red"
+                            android:textSize="@dimen/txt_size_14"
+                            app:customTypeFace="@string/systemRegular" />
+
+                    </FrameLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/bottomLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true">
+
+                    <include
+                        android:id="@+id/printSettingsBtn"
+                        layout="@layout/btn_type_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/all_btn_height"
+                        android:layout_margin="15dp"
+                        android:layout_weight="0" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

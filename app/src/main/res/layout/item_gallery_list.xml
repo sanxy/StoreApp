@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_5sdp"
+    android:background="#e8e8e8"
+   >
+
+    <RelativeLayout
+        android:background="#e8e8e8"
+        android:id="@+id/contentAreaView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true">
+
+        <com.lijiankun24.shadowlayout.ShadowLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            app:shadowColor="#2C000000"
+            app:shadowShape="rectangle"
+            app:shadowDx="5dp"
+            app:shadowDy="5dp"
+            app:shadowRadius="5dp"
+            app:shadowSide="all">
+            <com.view.SelectableRoundedImageView
+                android:id="@+id/galleryImgView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="center"
+                android:src="@mipmap/ic_no_icon"
+                app:sriv_border_width="0dp"
+                app:sriv_left_bottom_corner_radius="15dip"
+                app:sriv_left_top_corner_radius="15dip"
+                app:sriv_oval="false"
+
+                app:sriv_right_bottom_corner_radius="15dip"
+                app:sriv_right_top_corner_radius="15dip"/>
+        </com.lijiankun24.shadowlayout.ShadowLayout>
+
+
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/deleteImgView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_delete_gallery" />
+        <ImageView
+            android:id="@+id/selImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_check_mark_button" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_25sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_25sdp"
+        android:layout_marginBottom="@dimen/_2sdp"
+        android:elevation="0dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:id="@+id/contentArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/_15sdp"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.view.MTextView
+                    android:id="@+id/nameVTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_toStartOf="@+id/amountVTxt"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:singleLine="true"
+                    android:text="burger"
+                    android:textAlignment="viewStart"
+                    android:textColor="#141414"
+                    android:textSize="@dimen/_13ssp"
+                    app:customTypeFace="@string/systemSemiBold"
+                    tools:ignore="RtlCompat" />
+
+                <!--<com.kyleduo.switchbutton.SwitchButton
+                    android:id="@+id/onlineOfflineSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nameVTxt"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    app:kswBackColor="@android:color/holo_red_dark"
+                    app:kswBackMeasureRatio="3"
+                    app:kswThumbColor="@android:color/white"
+                    app:kswThumbHeight="20dp"
+                    app:kswThumbWidth="20dp" />-->
+
+
+                <com.view.MTextView
+                    android:id="@+id/inStockVTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nameVTxt"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/wallet_border"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_1sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_1sdp"
+                    android:text="IN STOCK"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_10ssp"
+                    app:customTypeFace="@string/systemRegular" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/editAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/_7ssp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_toStartOf="@+id/amountVTxt"
+                    app:srcCompat="@drawable/ic_pencil_edit_button" />
+
+                <com.view.MTextView
+                    android:id="@+id/amountVTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_toStartOf="@+id/onlineOfflineSwitch"
+                    android:text="$200"
+                    android:textColor="@color/appThemeColor_1"
+                    android:textSize="@dimen/_16ssp"
+                    app:customTypeFace="@string/systemSemiBold" />
+
+                <com.kyleduo.switchbutton.SwitchButton
+                    android:id="@+id/onlineOfflineSwitch"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    app:kswBackColor="#F1F2F4"
+                    app:kswBackDrawable="@drawable/miui_back_drawable"
+                    app:kswBackMeasureRatio="2"
+                    app:kswBackRadius="10dp"
+                    app:kswThumbColor="@color/Green"
+                    app:kswThumbHeight="20dp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

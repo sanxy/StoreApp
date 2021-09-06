@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/topView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/cancelImg"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="end"
+            android:layout_margin="@dimen/_8sdp"
+            app:srcCompat="@drawable/ic_clear" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_40sdp"
+            app:srcCompat="@drawable/ic_money" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-20dp"
+        android:orientation="vertical">
+
+        <com.view.MTextView
+            android:id="@+id/subTitleTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:gravity="center"
+            android:text=""
+            android:textColor="#363636"
+            android:textSize="@dimen/_17ssp"
+            android:visibility="visible"
+            app:customTypeFace="@string/systemSemiBold" />
+
+        <com.view.MTextView
+            android:id="@+id/currentPriceTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="25dp"
+            android:text=""
+            android:textColor="#363636"
+            android:textSize="@dimen/_17ssp"
+            app:customTypeFace="@string/systemSemiBold"
+            tools:text="Current Price" />
+
+        <include
+            android:id="@+id/newPrice"
+            layout="@layout/edit_box_form_design"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="25dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_weight="0"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <com.view.MTextView
+                android:id="@+id/cancelTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="Cancel"
+                android:textAllCaps="true"
+                android:textColor="@color/appThemeColor_1"
+                android:textSize="@dimen/txt_size_16"
+                app:customTypeFace="@string/systemMediumFont" />
+
+            <com.view.MTextView
+                android:id="@+id/submitTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_border"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="OK"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txt_size_16"
+                app:customTypeFace="@string/systemMediumFont" />
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

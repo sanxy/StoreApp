@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:elevation="0.3dp"
+        android:minHeight="60dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="#ffffff"
+        app:cardCornerRadius="@dimen/_8sdp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:id="@+id/orderItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.view.MTextView
+                    android:id="@+id/itemNameTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="5dp"
+                    android:gravity="start"
+                    tools:text="Coleslaw Puff"
+                    android:textAlignment="viewStart"
+                    android:textColor="#323232"
+                    app:customTypeFace="@string/systemMediumFont"
+                    android:textSize="@dimen/txt_size_16" />
+
+                <com.view.MTextView
+                    android:visibility="gone"
+                    android:id="@+id/itemSubNameTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="4dp"
+                    tools:text="toppings"
+                    android:gravity="start"
+                    android:textAlignment="viewStart"
+                    android:textColor="#636363"
+                    android:textSize="@dimen/txt_size_12"
+                    app:customTypeFace="@string/systemMediumFont" />
+
+                <com.view.MTextView
+                    android:textAlignment="viewStart"
+                    android:id="@+id/itemPriceTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textColor="@color/appThemeColor_1"
+                    android:textSize="@dimen/txt_size_16"
+                    app:customTypeFace="@string/systemMediumFont" />
+            </LinearLayout>
+
+            <com.view.MTextView
+                android:id="@+id/noItemsTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_weight="0"
+                android:gravity="center"
+                android:text="x1"
+                android:textColor="#272727"
+                android:textSize="@dimen/txt_size_16"
+                app:customTypeFace="@string/systemMediumFont" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingEnd="10dp"
+                android:visibility="gone">
+
+                <com.kyleduo.switchbutton.SwitchButton
+                    android:id="@+id/availItemSwitch"
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    app:kswBackColor="#F1F2F4"
+                    app:kswBackMeasureRatio="3"
+                    app:kswBackRadius="10dp"
+                    app:kswThumbColor="@android:color/holo_green_dark"
+                    app:kswThumbHeight="20dp" />
+
+                <com.view.MTextView
+                    android:id="@+id/availableTxtView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:text="Available"
+                    android:textAlignment="center"
+                    android:textColor="#636363"
+                    android:textSize="@dimen/txt_size_16" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:id="@+id/extraView"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_margin="@dimen/_10sdp"
+        android:visibility="gone"/>
+
+</LinearLayout>

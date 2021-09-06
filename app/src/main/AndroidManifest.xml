@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.roaddo.store">
+
+    <uses-feature
+        android:name="android.hardware.microphone"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH_PRIVILEGED" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- <permission android:name="android.permission.INTERNET" /> -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.FLAG_GRANT_READ_URI_PERMISSION" />
+    <uses-permission android:name="android.permission.MANAGE_DOCUMENTS" />
+
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <!--Thermal Print-->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <permission
+        android:name="com.roaddo.store.googlemapsv2.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="true" />
+
+    <uses-permission
+        android:name="com.roaddo.store.googlemapsv2.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <permission
+        android:name="com.roaddo.store.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.roaddo.store.gcm.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.REBOOT" />
+
+<!--    <application-->
+<!--        android:name="com.general.files.MyApp"-->
+<!--        android:allowBackup="true"-->
+<!--        android:hardwareAccelerated="true"-->
+<!--        android:icon="@mipmap/ic_launcher"-->
+<!--        android:label="${variant}"-->
+<!--        android:largeHeap="true"-->
+<!--        android:networkSecurityConfig="@xml/network_security_config"-->
+<!--        android:requestLegacyExternalStorage="true"-->
+<!--        android:supportsRtl="true"-->
+<!--        android:theme="@style/AppCompatTheme"-->
+<!--        tools:replace="android:label">-->
+
+            <application
+                android:name="com.general.files.MyApp"
+                android:allowBackup="true"
+                android:hardwareAccelerated="true"
+                android:icon="@mipmap/ic_launcher"
+                android:label="@string/app_name"
+                android:largeHeap="true"
+                android:networkSecurityConfig="@xml/network_security_config"
+                android:requestLegacyExternalStorage="true"
+                android:supportsRtl="true"
+                android:theme="@style/AppCompatTheme"
+                tools:replace="android:label">
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+
+        <service
+            android:name="com.general.files.SinchService"
+            android:enabled="true" />
+
+        <!-- Register the Alarm Receiver -->
+        <receiver
+            android:name="com.general.files.AlarmReceiver"
+            android:enabled="false" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_android_geo_api_key" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_paths" />
+        </provider>
+
+        <!-- Network on off Receiver Start -->
+        <receiver
+            android:name=".NetworkChangeReceiver"
+            android:label="NetworkChangeReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Network on off Receiver End -->
+
+        <service android:name=".MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <!-- <service
+             android:name="com.general.files.MyBackGroundService"
+             android:enabled="true"
+             android:icon="@mipmap/ic_launcher"
+             android:label="Service Alert"
+             android:persistent="true" />-->
+
+        <!--  <receiver
+              android:name=".StartServiceReceiver"
+              android:exported="true">
+              <intent-filter>
+                  <action android:name="android.intent.action.BOOT_COMPLETED" />
+
+                  <category android:name="android.intent.category.DEFAULT" />
+
+                  <action android:name="android.intent.action.REBOOT" />
+                  <action android:name="com.roaddo.store.StartServiceReceiver" />
+                  <action android:name="android.intent.action.BOOT_COMPLETED" />
+                  <action android:name="android.intent.action.REBOOT" />
+                  <action android:name="android.intent.action.BOOT_COMPLETED" />
+                  <action android:name="android.intent.action.REBOOT" />
+                  <action android:name="android.intent.action.BOOT_COMPLETED" />
+                  <action android:name="android.intent.action.REBOOT" />
+              </intent-filter>
+          </receiver>-->
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name"
+            android:theme="@style/FBtheme"
+            tools:replace="android:theme" />
+
+        <activity android:name="com.twitter.sdk.android.core.identity.OAuthActivity" />
+
+        <activity
+            android:name=".LauncherActivity"
+            android:screenOrientation="portrait">
+
+            <!-- android:launchMode="singleTask" -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".AppLoginActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".SelectCountryActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan">
+            <!--Thermal Print -->
+            <intent-filter>
+                <action android:name="android.bluetooth.device.action.ACL_CONNECTED" />
+                <action android:name="android.bluetooth.device.action.ACL_DISCONNECTED" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".SearchPickupLocationActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".AppLoignRegisterActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".SupportActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".MyProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCompatTheme" />
+
+        <activity
+            android:name=".StaticPageActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ContactUsActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".HelpActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".QuestionAnswerActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".VerifyInfoActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".CardPaymentActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".HistoryActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ListOfDocumentActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".UploadDocActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".StatisticsActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".AccountverificationActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".SuspendedDriver_Activity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".BankDetailActivity"
+            android:screenOrientation="portrait" />
+
+
+        <receiver
+            android:name=".FirebaseDataReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".SetAvailabilityActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".setTimeScheduleActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".SearchLocationActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".MaintenanceActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".OrderDetailActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".TrackOrderActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ItemAvailabilityActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".RestaurantDetailActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".SetWorkingHoursActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".OrderHistoryDetailsActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".RestaurantSettingsActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".NotificationActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".NotificationDetailsActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.livechatinc.inappchat.ChatWindowActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".CallScreenActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".IncomingCallScreenActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".PrescriptionActivity"
+            android:screenOrientation="portrait" />
+
+
+        <!--Thermal Print addon-->
+        <activity
+            android:name=".ThermalPrintSettingActivity"
+            android:screenOrientation="portrait" />
+
+
+    </application>
+
+</manifest>

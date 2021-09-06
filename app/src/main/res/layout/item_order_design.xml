@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_2sdp"
+        android:minHeight="@dimen/_60sdp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="@dimen/_8sdp"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:id="@+id/orderItem"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:paddingStart="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_8sdp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.view.MTextView
+                        android:id="@+id/orderIdTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="5dp"
+                        android:gravity="center_vertical"
+                        android:includeFontPadding="false"
+                        android:text="#12345678"
+                        android:textColor="#141414"
+                        android:textSize="@dimen/txt_size_16"
+                        app:customTypeFace="@string/systemSemiBold" />
+
+                    <com.view.MTextView
+                        android:id="@+id/takeAwayTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:gravity="start|center"
+                        android:includeFontPadding="false"
+                        android:text=""
+                        android:textAlignment="viewStart"
+                        android:textColor="#818181"
+                        android:textSize="@dimen/_12ssp"
+                        android:visibility="gone"
+                        app:customTypeFace="@string/systemRegular" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.75"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.view.MTextView
+                        android:id="@+id/statusTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        tools:text="Status"
+                        android:text=""
+                        android:textSize="@dimen/txt_size_16"
+                        app:customTypeFace="@string/systemSemiBold" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.view.MTextView
+                        android:id="@+id/noItemsTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="end|center"
+                        android:includeFontPadding="false"
+                        android:text="1 item"
+                        android:textAlignment="viewEnd"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp"
+                        app:customTypeFace="@string/systemRegular" />
+
+                    <com.view.MTextView
+                        android:id="@+id/timeTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|center"
+                        android:gravity="end|center"
+                        android:includeFontPadding="false"
+                        android:text="12:54 PM"
+                        android:textAlignment="viewEnd"
+                        android:textColor="#818181"
+                        android:textSize="@dimen/_12ssp"
+                        app:customTypeFace="@string/systemRegular" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:id="@+id/seperateLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#C9C9C9"
+        android:visibility="gone" />
+
+    <View
+        android:id="@+id/extraView"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_margin="@dimen/_10sdp"
+        android:visibility="gone" />
+
+</LinearLayout>

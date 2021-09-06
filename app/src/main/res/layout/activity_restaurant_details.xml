@@ -1,0 +1,250 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="com.fragments.EditProfileFragment">
+
+    <include
+        android:id="@+id/headar_area"
+        layout="@layout/design_toolbar_general"></include>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/containerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:fadeScrollbars="false"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <com.view.MTextView
+                        android:id="@+id/detailsHTxtView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/appThemeColor_1"
+                        android:gravity="start|center_vertical"
+                        android:minHeight="40dp"
+                        android:paddingBottom="5dp"
+                        android:paddingEnd="15dp"
+                        android:paddingStart="15dp"
+                        android:paddingTop="5dp"
+                        app:customTypeFace="@string/systemMediumFont"
+                        android:text="Contact Details and Address"
+                        android:textColor="@color/appThemeColor_TXT_1"
+                        android:textSize="@dimen/txt_size_16"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        >
+
+                        <LinearLayout
+                            android:id="@+id/nameArea"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:orientation="horizontal">
+
+                            <include
+                                android:id="@+id/contactPersonNameBox"
+                                layout="@layout/edit_box_form_design"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="5dp"
+                                android:layout_weight="1" />
+
+                        </LinearLayout>
+
+                        <FrameLayout
+                            android:id="@+id/restaurantLocationSelectArea"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp">
+
+                            <include
+                                android:id="@+id/restaurantLocationOnMapBox"
+                                layout="@layout/edit_box_form_design"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingEnd="34dp" />
+
+                            <ImageView
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:layout_gravity="center_vertical|end"
+                                android:layout_marginEnd="5dp"
+                                android:gravity="center"
+                                android:src="@mipmap/ic_arrow_down" />
+                        </FrameLayout>
+
+                        <include
+                            android:id="@+id/restaurantAddressBox"
+                            layout="@layout/edit_box_form_design"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp" />
+
+
+                        <!--<include
+                            android:id="@+id/stateBox"
+                            layout="@layout/editbox_form_design"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp" />-->
+
+                        <FrameLayout
+                            android:id="@+id/stateSelectArea"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true">
+
+                            <include
+                                android:id="@+id/stateBox"
+                                layout="@layout/edit_box_form_design"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingEnd="34dp" />
+
+                            <ImageView
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:layout_gravity="center_vertical|end"
+                                android:layout_marginEnd="5dp"
+                                android:gravity="center"
+                                android:src="@mipmap/ic_arrow_down" />
+                        </FrameLayout>
+
+
+                        <!--<include
+                            android:id="@+id/cityBox"
+                            layout="@layout/editbox_form_design"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp" />-->
+
+                        <FrameLayout
+                            android:id="@+id/citySelectArea"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true">
+
+                            <include
+                                android:id="@+id/cityBox"
+                                layout="@layout/edit_box_form_design"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingEnd="34dp" />
+
+                            <ImageView
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:layout_gravity="center_vertical|end"
+                                android:layout_marginEnd="5dp"
+                                android:gravity="center"
+                                android:src="@mipmap/ic_arrow_down" />
+                        </FrameLayout>
+
+
+                        <include
+                            android:id="@+id/zipBox"
+                            layout="@layout/edit_box_form_design"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp" />
+
+
+                    </LinearLayout>
+
+                    <com.view.MTextView
+                        android:id="@+id/settingsHTxtView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/appThemeColor_1"
+                        android:gravity="start|center_vertical"
+                        android:minHeight="40dp"
+                        android:paddingBottom="5dp"
+                        android:paddingEnd="15dp"
+                        android:paddingStart="15dp"
+                        android:paddingTop="5dp"
+                        android:text="Order Settings"
+                        app:customTypeFace="@string/systemMediumFont"
+                        android:textColor="@color/appThemeColor_TXT_1"
+                        android:textSize="@dimen/txt_size_16"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:id="@+id/settingsArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp"
+                        android:visibility="gone">
+
+                        <include
+                            android:id="@+id/estTimeEditBox"
+                            layout="@layout/edit_box_form_design"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <include
+                            android:id="@+id/maxTotalQTYEditBox"
+                            layout="@layout/edit_box_form_design"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp" />
+
+                        <include
+                            android:id="@+id/minOrderPriceEditBox"
+                            layout="@layout/edit_box_form_design"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </ScrollView>
+
+
+            <include
+                android:layout_margin="@dimen/_20sdp"
+                android:id="@+id/btn_type2"
+                layout="@layout/btn_type_1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/all_btn_height"
+                android:layout_weight="0" />
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/loadingBar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+
+</LinearLayout>

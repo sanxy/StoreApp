@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.view.editBox.MaterialEditText xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:background="#00000000"
+    android:gravity="center"
+    android:inputType="textNoSuggestions"
+    android:maxLines="1"
+    android:text=""
+    android:textSize="@dimen/txt_size_16"
+    android:theme="@style/bg_materialEditText"
+    app:met_accentTypeface="@string/defaultFont"
+    app:met_typeface="@string/defaultFont"
+    tools:text="Edit box Payment" />

@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/bottomDataArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_18sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/titleArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.view.MTextView
+                    android:id="@+id/TitleTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:includeFontPadding="false"
+                    android:padding="@dimen/_5sdp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_17ssp"
+                    android:visibility="visible"
+                    app:customTypeFace="@string/systemSemiBold"
+                    app:textAllCaps="false" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/closeArea"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/closeImg"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_22sdp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="@dimen/_4sdp"
+                    android:src="@drawable/tw__composer_close"
+                    android:tint="#646464"
+                    android:visibility="visible" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ProgressBar
+                android:id="@+id/mProgressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-6dp"
+                android:visibility="visible" />
+
+            <View
+                android:id="@+id/mView"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/titleArea"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:background="#efefef" />
+        </FrameLayout>
+
+
+        <FrameLayout
+            android:id="@+id/showDeviceList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mView">
+
+            <com.view.MTextView
+                android:id="@+id/waitTxt1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Please wait fetching Available Printers.	"
+                android:textColor="@color/black_prj"
+                android:visibility="visible"
+                app:customTypeFace="@string/robotolightFont" />
+
+            <com.view.anim.loader.AVLoadingIndicatorView
+                android:id="@+id/loaderView1"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:visibility="gone"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                app:indicator="BallSpinFadeLoader"
+                app:indicator_color="@color/black" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/mRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/connectToDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mView"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <com.view.MTextView
+                android:id="@+id/connectTxt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:gravity="center"
+                android:text="Connecting to your selected device."
+                android:textColor="@color/black_prj"
+                android:visibility="visible"
+                app:customTypeFace="@string/robotolightFont" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <com.view.MTextView
+                        android:id="@+id/deviceName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Test Device"
+                        android:textColor="#2F2F2F"
+                        android:textSize="@dimen/txt_size_14" />
+
+                    <com.view.MTextView
+                        android:id="@+id/deviceId"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="152548946"
+                        android:textColor="#2F2F2F"
+                        android:textSize="@dimen/txt_size_12" />
+
+                </LinearLayout>
+
+                <com.view.MTextView
+                    android:id="@+id/statusTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Connecting..."
+                    android:textColor="@color/black_prj"
+                    android:visibility="visible"
+                    app:customTypeFace="@string/robotolightFont" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/centerDataArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="15dp"
+        android:gravity="center">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="35dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_detailArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="15dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="45dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical">
+
+                    <com.view.MTextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top|center"
+                        android:gravity="center|center_vertical"
+                        android:text=""
+                        android:textAlignment="center"
+                        android:textSize="@dimen/txt_size_18"
+                        android:visibility="gone"
+                        app:customTypeFace="@string/robotomediumFont" />
+
+
+                    <com.view.MTextView
+                        android:id="@+id/tv_message"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top|center"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center|center_vertical"
+                        android:text=""
+                        android:textAlignment="center"
+                        android:textSize="@dimen/txt_size_14"
+                        android:visibility="gone"
+                        app:customTypeFace="@string/robotolightFont" />
+
+                    <LinearLayout
+                        android:id="@+id/listArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.view.MTextView
+                                android:id="@+id/waitTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="Please wait fetching Available Printers.	"
+                                android:textColor="@color/black_prj"
+                                android:visibility="gone"
+                                app:customTypeFace="@string/robotolightFont" />
+
+                            <com.view.anim.loader.AVLoadingIndicatorView
+                                android:id="@+id/loaderView"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_centerInParent="true"
+                                android:layout_gravity="center"
+                                android:background="@android:color/transparent"
+                                app:indicator="BallSpinFadeLoader"
+                                app:indicator_color="@color/black" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/dataRecyclerView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" />
+
+
+                        </FrameLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/horizontalButtonArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <com.view.MTextView
+                            android:id="@+id/tv_Proceed_Button"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/all_btn_height2"
+                            android:layout_gravity="top|center"
+                            android:layout_margin="10dp"
+                            android:layout_weight="1"
+                            android:background="@color/appThemeColor_1"
+                            android:gravity="center|center_vertical"
+                            android:text=""
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/txt_size_14"
+                            android:visibility="gone"
+                            app:customTypeFace="@string/robotolightFont" />
+
+                        <com.view.MTextView
+                            android:id="@+id/tv_Cancel_Button"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/all_btn_height2"
+                            android:layout_gravity="top|center"
+                            android:layout_margin="10dp"
+                            android:layout_weight="1"
+                            android:background="@color/appThemeColor_1"
+                            android:gravity="center|center_vertical"
+                            android:text=""
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/txt_size_14"
+                            android:visibility="gone"
+                            app:customTypeFace="@string/robotolightFont" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/verticalButtonArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <com.view.MTextView
+                            android:id="@+id/tv_Positive_Button"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/all_btn_height4"
+                            android:layout_gravity="top|center"
+                            android:layout_marginTop="15dp"
+                            android:background="@color/appThemeColor_1"
+                            android:gravity="center|center_vertical"
+                            android:text=""
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/txt_size_14"
+                            android:visibility="gone"
+                            app:customTypeFace="@string/robotolightFont" />
+
+                        <com.view.MTextView
+                            android:id="@+id/tv_Negative_Button"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/all_btn_height4"
+                            android:layout_gravity="top|center"
+                            android:layout_marginTop="15dp"
+                            android:background="@color/appThemeColor_1"
+                            android:gravity="center|center_vertical"
+                            android:text=""
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/txt_size_14"
+                            android:visibility="gone"
+                            app:customTypeFace="@string/robotolightFont" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true">
+
+            <com.view.SelectableRoundedImageView
+                android:id="@+id/dialogImgView"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:sriv_border_width="8dip"
+                app:sriv_left_bottom_corner_radius="20dip"
+                app:sriv_left_top_corner_radius="20dip"
+                app:sriv_oval="true"
+                app:sriv_right_bottom_corner_radius="20dip"
+                app:sriv_right_top_corner_radius="20dip" />
+
+
+            <ImageView
+                android:id="@+id/iv_icon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center" />
+        </FrameLayout>
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

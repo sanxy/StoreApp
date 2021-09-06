@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.view.MTextView
+        android:id="@+id/messageTxtView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp"
+        android:text="Delivery executive XYZ is on way to pick order #123456789"
+        android:textColor="#7a8186" />
+
+    <include
+        android:id="@+id/okBtn"
+        layout="@layout/btn_type_1"
+        android:layout_width="180dp"
+        android:layout_height="@dimen/all_btn_height"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp" />
+</LinearLayout>
